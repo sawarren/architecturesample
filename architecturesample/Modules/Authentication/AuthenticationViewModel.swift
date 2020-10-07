@@ -39,7 +39,7 @@ class AuthenticationViewModel {
         static let differentPasswords = FormSubmissionError.validationFailed(reason: "The passwords you have given don't match.")
     }
     
-    enum FormOption: Int {
+    enum FormOption: Int, CaseIterable {
         case login = 0
         case register = 1
         
@@ -48,10 +48,6 @@ class AuthenticationViewModel {
             case .login: return "Login"
             case .register: return "Register"
             }
-        }
-        
-        static var all: [FormOption] {
-            return [.login, .register]
         }
     }
     
@@ -81,7 +77,7 @@ class AuthenticationViewModel {
     }
     
     var formOptionTitles: [String] {
-        return FormOption.all.map{ $0.title }
+        return FormOption.allCases.map{ $0.title }
     }
     
     var submitFormTitle: String {
