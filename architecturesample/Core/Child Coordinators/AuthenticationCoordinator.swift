@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthenticationCoordinatorDelegate: class {
-    func didAuthenticate(_ user: User)
+    func viewController(_ viewController: AuthenticationViewController, didAuthenticateUser user: User)
 }
 
 class AuthenticationCoordinator: Coordinator {
@@ -44,7 +44,7 @@ class AuthenticationCoordinator: Coordinator {
 // MARK: - AuthenticationViewControllerDelegate -
 
 extension AuthenticationCoordinator: AuthenticationViewControllerDelegate {
-    func didAuthenticate(_ user: User) {
-        delegate.didAuthenticate(user)
+    func viewController(_ viewController: AuthenticationViewController, didAuthenticateUser user: User) {
+        delegate.viewController(viewController, didAuthenticateUser: user)
     }
 }

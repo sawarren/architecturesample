@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ContentCoordinatorDelegate: class {
-    func didLogOut()
+    func viewControllerDidLogOut(_ viewController: HomeViewController)
 }
 
 class ContentCoordinator: Coordinator {
@@ -51,7 +51,7 @@ class ContentCoordinator: Coordinator {
 // MARK: - HomeViewControllerDelegate -
 
 extension ContentCoordinator: HomeViewControllerDelegate {
-    func didLogOut() {
-        delegate.didLogOut()
+    func viewControllerDidLogOut(_ viewController: HomeViewController) {
+        delegate.viewControllerDidLogOut(viewController)
     }
 }

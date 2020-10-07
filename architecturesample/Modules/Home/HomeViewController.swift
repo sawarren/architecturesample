@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate: class {
-    func didLogOut()
+    func viewControllerDidLogOut(_ viewController: HomeViewController)
 }
 
 class HomeViewController: UIViewController {
@@ -47,6 +47,6 @@ class HomeViewController: UIViewController {
     // MARK: Actions
     
     @IBAction fileprivate func actionOnTouchUpInside(_ sender: UIButton) {
-        delegate.didLogOut()
+        delegate.viewControllerDidLogOut(self)
     }
 }

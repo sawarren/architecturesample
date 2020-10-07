@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthenticationViewControllerDelegate: class {
-    func didAuthenticate(_ user: User)
+    func viewController(_ viewController: AuthenticationViewController, didAuthenticateUser user: User)
 }
 
 class AuthenticationViewController: UIViewController {
@@ -120,7 +120,7 @@ class AuthenticationViewController: UIViewController {
                 let message = error.localizedDescription
                 self.dialog(with: title, and: message)
             } else if let user = user {
-                self.delegate.didAuthenticate(user)
+                self.delegate.viewController(self, didAuthenticateUser: user)
             }
         }
     }

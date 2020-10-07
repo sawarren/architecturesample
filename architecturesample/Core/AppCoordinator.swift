@@ -59,7 +59,7 @@ class AppCoordinator: Coordinator {
 // MARK: - AuthenticationCoordinatorDelegate -
 
 extension AppCoordinator: AuthenticationCoordinatorDelegate {
-    func didAuthenticate(_ user: User) {
+    func viewController(_ viewController: AuthenticationViewController, didAuthenticateUser user: User) {
         childCoordinators[.authentication] = nil
         self.user = user
         showContent()
@@ -69,7 +69,7 @@ extension AppCoordinator: AuthenticationCoordinatorDelegate {
 // MARK: - ContentCoordinatorDelegate -
 
 extension AppCoordinator: ContentCoordinatorDelegate {
-    func didLogOut() {
+    func viewControllerDidLogOut(_ viewController: HomeViewController) {
         childCoordinators[.content] = nil
         self.user = nil
         showAuthentication()
