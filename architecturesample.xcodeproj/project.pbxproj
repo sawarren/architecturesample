@@ -250,6 +250,7 @@
 				TargetAttributes = {
 					12D05561211E4A09005EF25D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -492,7 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.conduit.architecturesample;
 				PRODUCT_NAME = $inherited;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -511,7 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.conduit.architecturesample;
 				PRODUCT_NAME = $inherited;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

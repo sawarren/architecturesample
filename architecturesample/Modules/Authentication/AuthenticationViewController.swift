@@ -69,7 +69,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     fileprivate func setupSubmitButton() {
-        submitButton.setTitle(model.submitFormTitle, for: UIControlState())
+        submitButton.setTitle(model.submitFormTitle, for: UIControl.State())
         submitButton.layer.shadowOffset = CGSize(width: 5, height: 10)
         submitButton.layer.shadowColor = UIColor.white.cgColor
         submitButton.layer.shadowOpacity = 0.1
@@ -81,7 +81,7 @@ class AuthenticationViewController: UIViewController {
         passwordTextField.delegate = self
         repeatPasswordTextField.delegate = self
         
-        let attributes: [NSAttributedStringKey: UIColor] = [.foregroundColor: .white]
+        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: .white]
         emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: attributes)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: attributes)
         repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: "repeat password", attributes: attributes)
@@ -94,7 +94,7 @@ class AuthenticationViewController: UIViewController {
     
     @IBAction fileprivate func actionOnValueChanged(_ sender: UISegmentedControl) {
         model.selectFormOption(for: sender.selectedSegmentIndex)
-        submitButton.setTitle(model.submitFormTitle, for: UIControlState())
+        submitButton.setTitle(model.submitFormTitle, for: UIControl.State())
         updatePasswordReturnKey()
         clearForm()
         
