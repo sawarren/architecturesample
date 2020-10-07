@@ -58,12 +58,16 @@ class AuthenticationViewController: UIViewController {
             }
         }
         
+        optionSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        optionSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        optionSegmentedControl.selectedSegmentTintColor = .white
+        
         optionSegmentedControl.selectedSegmentIndex = 0
         model.selectFormOption(for: optionSegmentedControl.selectedSegmentIndex)
         
         optionSegmentedControl.layer.cornerRadius = 4.0
         optionSegmentedControl.layer.shadowOffset = CGSize(width: 5, height: 10)
-        optionSegmentedControl.layer.shadowColor = UIColor.white.cgColor
+        optionSegmentedControl.layer.shadowColor = UIColor.black.cgColor
         optionSegmentedControl.layer.shadowOpacity = 0.1
         optionSegmentedControl.layer.shadowRadius = 5
     }
@@ -71,7 +75,7 @@ class AuthenticationViewController: UIViewController {
     fileprivate func setupSubmitButton() {
         submitButton.setTitle(model.submitFormTitle, for: UIControl.State())
         submitButton.layer.shadowOffset = CGSize(width: 5, height: 10)
-        submitButton.layer.shadowColor = UIColor.white.cgColor
+        submitButton.layer.shadowColor = UIColor.black.cgColor
         submitButton.layer.shadowOpacity = 0.1
         submitButton.layer.shadowRadius = 5
     }
@@ -81,7 +85,7 @@ class AuthenticationViewController: UIViewController {
         passwordTextField.delegate = self
         repeatPasswordTextField.delegate = self
         
-        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: .white]
+        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: .black]
         emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: attributes)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: attributes)
         repeatPasswordTextField.attributedPlaceholder = NSAttributedString(string: "repeat password", attributes: attributes)
